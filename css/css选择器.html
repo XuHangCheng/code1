@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
+        body{
+            height: 3000px;
+        }
         /* #为id选择器 */
         #div1{
             width: 200px;
@@ -21,9 +24,11 @@
             height: 100px;
             background: yellow;
         }
+        /* 后代 */
         div span{
             color: pink;
         }
+        /* 子代 */
         div>span{
             color: blue;
         }
@@ -33,6 +38,16 @@
         /* 分组、群组选择器 */
         p,li{
             color: rgb(107, 86, 15);
+        }
+        a:hover{
+            color: blueviolet;
+            background:cornflowerblue;
+        }
+        a:active{
+            color: brown;
+        }
+        a:visited{
+            background: black;
         }
     </style>
 </head>
