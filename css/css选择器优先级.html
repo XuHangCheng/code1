@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* div{
+            height: 50px;
+            background: blue;
+        }*/
+        /* div{
+            background: green;
+        } 
+        #div1{
+            height: 50px;
+            background: #000;
+        }
+        .aa{
+            height: 100px;
+            background: yellow;
+            color: purple;
+        } */
+        h1{
+            background: yellow;
+        }
+        .cc h1{
+            background: red;
+        }
+        #div2 h1{
+            background: blue;
+        }
+        #h111{
+            background: green;
+        }
+    </style>
+    <!-- style优先级最高 1000
+         id   100
+         class 10
+         标签   1
+    -->
+    <!-- 优先级相同，下面的覆盖上面的 -->
+    <!-- id优先级高 -->
+</head>
+<body>
+    <!-- <div id="div1" class="aa bb">
+        111
+    </div> -->
+    <div id="div1">
+        <div id="div2">
+            <div class="aa">
+                <h1 id="h111">1111111</h1>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

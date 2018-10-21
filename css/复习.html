@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: red;
+            padding: 20px;
+            border: 20px solid black;
+            margin: 50px;
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            background: blue;
+            box-sizing: border-box;
+            padding: 40px;
+            border: 10px solid black;
+            margin: 50px;
+        }
+        /* #div3{
+            width: 200px;
+            height: 200px;
+            background: green;
+            margin-top: 50px;
+             overflow:hidden; 
+             border: 1px solid transparent;
+             float: left; 
+            position: absolute;
+        }
+        #div4{
+            width: 100px;
+            height: 100px;
+            background: yellow;
+            margin-top: 100px;
+        }
+        h1{
+            background: black;
+            height: 50px;
+        } */
+        body{
+            height: 2000px;
+        }
+        #div0{
+            width: 400px;
+            height: 400px;
+            background: grey;
+            position: relative;
+            left: 100px;
+            top: 50px;
+        }
+        #div0 div{
+            float: left;
+        }
+        #div5{
+            width: 100px;
+            height: 50px;
+            background: red;
+        }
+        #div6{
+            width: 100px;
+            height: 50px;
+            background: green;
+            position: absolute;
+            left: 100px;
+            top: 50px;
+        }
+        #div7{
+            width: 100px;
+            height: 50px;
+            background: blue
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">1</div>
+    <div id="div2">2</div>
+    <div id="div3">
+        <div id="div4">3</div>
+    </div>
+    <div id="div0">
+        <div id="div5">4</div>
+        <div id="div6">5</div>
+        <div id="div7">6</div>
+    </div>
+    <h1></h1>
+</body>
+</html>
