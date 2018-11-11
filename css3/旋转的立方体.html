@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html{
+            background: black;
+        }
+        *{
+            padding: 0;
+        }
+        .all{
+            perspective: 800px;
+            margin: 100px auto;
+            position: relative;
+        }
+        .bian{
+            width: 200px;
+            height: 200px;
+            color:black;
+            background: rgba(255,255,255,0.3);
+            text-align: center;
+            line-height: 200px;
+            font-size: 50px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+        }
+        .first{
+            transform: translateZ(-200px);
+        }
+    </style>
+</head>
+<body>
+    <div class="all">
+        <div class="bian first">1</div>
+        <div class="bian second">2</div>
+        <div class="bian third">3</div>
+        <div class="bian forth">4</div>
+        <div class="bian fifth">5</div>
+        <div class="bian sixth">6</div>
+    </div>
+</body>
+</html>
