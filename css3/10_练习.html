@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /*
+        .child1{
+            width: 200px;
+            height: 400px;
+            background: red;
+            float: left;
+        }
+        .child2{
+            height: 400px;
+            margin-left: 205px;
+            background: blue;
+        } */
+        body{
+            display: -webkit-flex
+        }
+        .child1{
+            width: 200px;
+            height: 400px;
+            background: red;
+            margin-right: 5px;
+        }
+        .child2{
+            height: 400px;
+            background: blue;
+            flex-grow: 1;
+
+        }
+    </style>
+</head>
+<body>
+        <div class="child1"></div>
+        <div class="child2"></div>
+</body>
+</html>
