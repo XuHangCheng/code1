@@ -6,31 +6,63 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        html{
-            background: black;
-        }
         *{
+            margin: 0;
             padding: 0;
         }
-        .all{
+        body{
+            background: black;
             perspective: 800px;
-            margin: 100px auto;
+        }
+        .all{
+            
+            width: 200px;
+            height: 200px;
+            margin: 50px auto;
             position: relative;
+            transform-style: preserve-3d;
+            animation: aaa 2s linear infinite;
         }
         .bian{
             width: 200px;
             height: 200px;
             color:black;
             background: rgba(255,255,255,0.3);
+            border-radius: 10px;
             text-align: center;
             line-height: 200px;
             font-size: 50px;
             position: absolute;
             top: 0;
-            left: 50%;
+            left: 0;
+            
+        }
+        @keyframes aaa{
+            from{
+
+            }
+            to{
+                transform: rotateY(360deg);
+            }
         }
         .first{
-            transform: translateZ(-200px);
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        .second{
+            transform:  translateZ(100px);
+            z-index:1;
+        }
+        .third{
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        .forth{
+            transform: rotateY(180deg) translateZ(100px);
+        }
+        .fifth{
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        .sixth{
+            transform: rotateX(-90deg) translateZ(100px);
         }
     </style>
 </head>
