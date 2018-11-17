@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        123
+    </div>
+    <button id="btn">
+        click
+    </button>
+    <script>
+    // 判断类型
+        var a = 10;
+        var d = 1.5;
+        console.log(typeof a); //"number"
+        console.log(typeof d); //"number"
+        var b = 'abc';
+        var e = '123'
+        console.log(typeof b); //"string"
+        console.log(typeof e); //"string"
+        var c = true
+        console.log(typeof c); //"boolean"
+        var f;
+        console.log(typeof g); //'undefined'
+
+        var a = 10, b = 8, c = 6;
+    
+    /*js的基本数据类型  5种 number string boolean undefined null
+      document.getElementById('div2'); 取不到元素的返回null*/
+    
+        var oDiv = document.getElementById('div1');
+        var oBtn = document.getElementById('btn');
+        oBtn.onclick = function(){
+            oDiv.style.background = "red";
+        }
+    </script>
+</body>
+</html>
