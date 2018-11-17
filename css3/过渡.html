@@ -12,9 +12,16 @@
             background: red;
             /* 触发条件 */
             transition: width 2s ease 1s;
+            /* 名称 运动时间 运动规律 延迟 无限循环 保持运动结束形状 */
+            animation: run 2s ease 1s infinite forwards;
         }
-        div:hover{
-            width: 800px;
+        @keyframes run{
+            0%{
+
+            }
+            100%{
+                width: 800px;
+            }
         }
     </style>
 </head>
