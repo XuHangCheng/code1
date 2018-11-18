@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var a1 = [1,2,3];
+        var a2 = [2,3,4];
+
+        var a3 =a1.concat(a2);
+        console.log(a3);
+
+        var a4 = [1,2,3];
+        console.log(a4.join(''));
+
+        var a5 = [1,2,3];
+        console.log( a5.pop() );
+        console.log(a5);
+        
+        console.log(a5.shift());
+        console.log(a5);
+    
+        console.log(a5.push(8));
+        console.log(a5);
+
+        var a6 = ['a','b','c'];
+        console.log(a6.reverse());
+        console.log(a6);
+
+        var a7 =[1,2,3,4,5,6];
+        console.log( a7.slice(2,5) );
+        
+        var a8 = [3,12,45,13,56,100];
+        console.log(a8.sort());
+        var a9 = a8.sort(function(a,b){
+            return a-b;
+        })
+        console.log(a9);
+        var a10 = a8.sort(function(a,b){
+            return b-a;
+        })
+        console.log(a10);
+
+        var a11 = [1,2,3,4,5,6];
+        //a11.splice(2,0,8);
+        //console.log(a11);
+
+        //a11.splice(2,2);
+        //console.log(a11);
+
+        a11.splice(4,1,100);
+        console.log(a11);
+    </script>
+</body>
+</html>
