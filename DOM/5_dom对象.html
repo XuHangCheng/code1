@@ -12,7 +12,7 @@
     </div>
     <ul>
         <li>111</li>
-        <li class="a">222</li>
+        <li class="a b">222</li>
         <li>333</li>
         <li class="a">444</li>
     </ul>
@@ -25,13 +25,13 @@
 
         // console.log(oDiv);
         
-        // //document.getElementsByTagName() 通过标签 获取元素 返回数组 数组中存放DOM对象
+        //document.getElementsByTagName() 通过标签 获取元素 返回数组 数组中存放DOM对象
         // var aLi = document.getElementsByTagName('li');
         // for(var i=0; i<aLi.length; i++){
         //     aLi[i].style.color = 'blue';
         // }
 
-        // //document.getElementsByClassName() 通过Class名获取元素，返回数组
+        //document.getElementsByClassName() 通过Class名获取元素，返回数组
         // var aClass = document.getElementsByClassName('a');
         // for(var b=0; b<aClass.length; b++){
         //     aClass[b].style.background = 'yellow';
@@ -42,13 +42,22 @@
             var allEle = document.getElementsByTagName('*');
             for(var i=0; i<allEle.length; i++){
                 //class 是保留字
-                if( allEle[i].className == clsName){
-                    result.push(allEle[i]);
+                // if( allEle[i].className == clsName){
+                //     result.push(allEle[i]);
+                // }
+                var arr = allEle[i].className.split(' ');
+                for(var k=0; k<arr.length; k++){
+                    if(arr[k] == clsName){
+                        result.push(allEle[i]);
+                    }
                 }
             }
             return result;
         }
-        console.log( getElementsByClass('a') );
+        var a2 = getElementsByClass('a') ;
+        for(var j=0;j<a2.length;j++){
+            a2[j].style.background = 'pink';
+        }
     </script>
 </body>
 </html>
