@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        123456789
+    </div>
+    <ul>
+        <li>111</li>
+        <li class="a">222</li>
+        <li>333</li>
+        <li class="a">444</li>
+    </ul>
+    <script>
+        //获取元素常用方法
+        //document.getElementById()
+
+        // var oDiv = document.getElementById('div1');
+        // oDiv.style.color = 'red';
+
+        // console.log(oDiv);
+        
+        // //document.getElementsByTagName() 通过标签 获取元素 返回数组 数组中存放DOM对象
+        // var aLi = document.getElementsByTagName('li');
+        // for(var i=0; i<aLi.length; i++){
+        //     aLi[i].style.color = 'blue';
+        // }
+
+        // //document.getElementsByClassName() 通过Class名获取元素，返回数组
+        // var aClass = document.getElementsByClassName('a');
+        // for(var b=0; b<aClass.length; b++){
+        //     aClass[b].style.background = 'yellow';
+        // }
+
+        function getElementsByClass(clsName){
+            var result = [];
+            var allEle = document.getElementsByTagName('*');
+            for(var i=0; i<allEle.length; i++){
+                //class 是保留字
+                if( allEle[i].className == clsName){
+                    result.push(allEle[i]);
+                }
+            }
+            return result;
+        }
+        console.log( getElementsByClass('a') );
+    </script>
+</body>
+</html>
