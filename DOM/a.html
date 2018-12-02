@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">
+        click go -1
+    </button>
+    <script>
+        var oBtn = document.getElementById('btn');
+        oBtn.onclick = function(){
+            //返回上一个历史记录
+            history.back();
+            //返回下一个历史记录
+            history.forward();
+            //加载 history 列表中的某个具体页面
+            //go(num) num 正数 下一个num个历史记录
+        }
+        
+    </script>
+</body>
+</html>
