@@ -61,12 +61,9 @@
                 //对当前对象的引用
                 for(var j=0 ; j<aLi.length; j++){
                     aLi[j].className = '';
+                    aDiv[j].className = '';
                 }
                 this.className = 'selected';
-                
-                for(var k=0 ; k<aDiv.length; k++){
-                    aDiv[k].className = '';
-                }
                 aDiv[this.idx].className = 'active';
             
             }
