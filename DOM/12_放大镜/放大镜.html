@@ -32,7 +32,7 @@
             position: relative;
         }
         #big-img{
-            position: absolute
+            position: absolute;
         }
     </style>
 </head>
@@ -42,7 +42,7 @@
         <span></span>
     </div>
     <div id="big-box">
-        <img src="../DOM/10_放大镜/2.jpg" alt="" id="big-img">
+        <img id="big-img" src="../DOM/10_放大镜/2.jpg" alt="" >
     </div>
     <script>
         var oSmallBox = document.getElementById('small-box');
@@ -60,7 +60,7 @@
             if(oSpan.offsetLeft <= 0){
                 oSpan.style.left = 0;
             }
-             if(oSpan.offsetLeft >= oSmallBox.offsetWidth - oSpan.offsetWidth){
+            if(oSpan.offsetLeft >= oSmallBox.offsetWidth - oSpan.offsetWidth){
                  oSpan.style.left =  oSmallBox.offsetWidth - oSpan.offsetWidth + 'px'
             }
             if(oSpan.offsetTop <= 0){
@@ -72,18 +72,24 @@
         
 
         var smallMax = oSmallBox.offsetWidth - oSpan.offsetWidth;
+        var smallMaxY = oSmallBox.offsetHeight - oSpan.offsetHeight;
 
-        var bigMax = oBigBox.offsetWidth - oSpan.offsetWidth;
+        var bigMax = oBigImg.offsetWidth - oBigBox.offsetWidth;
+        var bigMaxY = oBigImg.offsetHeight - oBigBox.offsetHeight;
 
         var percent = oSpan.offsetLeft/smallMax;
+        var percentY = oSpan.offsetTop/smallMaxY;
 
-        oBigImg.style.left = -bigMax*percent + 'px'
+        oBigImg.style.left = -bigMax*percent + 'px';
+        oBigImg.style.top = -bigMaxY*percentY + 'px';
 
-            oSmallBox.onmouseout = function(){
+          
+        }
+
+          oSmallBox.onmouseout = function(){
                 oSpan.style.display = 'none'
                 oBigBox.style.display = 'none'
             }
-        }
     </script>
 </body>
 </html>
