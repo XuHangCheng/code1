@@ -98,76 +98,45 @@
     <script src = "jslib.js"></script>
     <script>
         
-        var oContain = document.getElementById('container');
-        var oBtnbox = document.getElementById('btn-box');
-        var aBtn = oBtnbox.getElementsByTagName('li');
-        var oImg = document.getElementById('img-box')
-        var aImg = document.getElementsByTagName('img');
         var oNext = document.getElementById('next');
-        var oLast = document.getElementById('last');
+        var oPrev = document.getElementById('prev');
+        var oImgBox = document.getElementById('img-box');
+        var oBtnBox = document.getElementById('btn-box');
+        var aImg = document.getElementsByTagName('img');
+        var aLi = oBtnBox.getElementsByTagName('li');
         var iNow = 0;
-        var timer;
-
         oNext.onclick = function(){
             iNow++;
-            if(iNow ==aImg.length ){
-                oImg.style.left = '0px;'
-                iNow = 0;
+            // 瞬间拽到第0张图片  索引改为1
+            if(iNow == aImg.length){
+                oImgBox.style.left = 0;
+                // 显示第二张图 即索引为1的图片
+                iNow = 1;
             }
             change(iNow);
         }
-        function change(idx){
-            animate(oImg,{left:-idx * 750});
+        oPrev.onclick = function(){
+            iNow--;
+            // 临界点 -1 拽到倒数第一张图  然后 iNow = 显示倒数第二个 
+            if(iNow == -1){
+                oImgBox.style.left = -aImg[0].offsetWidth * (aImg.length-1) +"px";
+                iNow = aImg.length - 2;
+            }
+            change(iNow);
         }
-        
-        // for(var i = 0;i < aBtn.length ; i++){
-        //     aBtn[i].index = i;
-        //     aBtn[i].onmouseover = function(){
-        //         change(this.index);
-        //         // clearInterval(timer);
-        //         iNow = this.index;
-        //     }
-        // }
-        // oNext.onclick = function(){ 
-              
-        //     iNow++;
-        //     if(iNow == aBtn.length){
-        //         iNow = 0;
-        //     }
-        //    change(iNow);
-        // }
-        // oLast.onclick = function(){
-            
-        //     iNow--;
-        //     if(iNow == -1){
-        //         iNow = aBtn.length-1;
-        //     }
-        //     change(iNow);
-        // }
-        
-        // function change(idx){
-            
-        //     for(var j = 0;j < aBtn.length ; j++){
-        //         aBtn[j].className = '';
-                
-        //     }
-        //     aBtn[idx].className = 'select';
-        //     oImg.style.left = -750 * idx + 'px';
-        // }
-        
-        // run();
-        // oContain.onmouseover = function(){
-        //     clearInterval(timer);
-        // }
-        // oContain.onmouseout = function(){
-        //     run();
-
-        // }
-        // function run(){
-        //     timer = setInterval(function(){
-        //         oNext.onclick();
-        //     }, 3000);   
-        // }
+        // 图片索引 0  1       2             n
+        // 移动left 0  1*-750  2*-750       n*-750
+        function change(index){
+            for(var i=0; i<aLi.length; i++){
+                aLi[i].className = "";
+            }
+            // 当index的索引是5的时候  让第一个按钮显示selected样式
+            aLi[index == 5?0:index].className = "selected";
+            // 这个方法不用写px
+            animate(oImgBox,{
+                left :-index *750 
+            });
+        }
          
     </script>
 </body>
