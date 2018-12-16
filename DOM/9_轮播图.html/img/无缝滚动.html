@@ -63,15 +63,12 @@
         var oNumBox = document.getElementById('num-box');
         var oNext = document.getElementById('right');
         var oLast = document.getElementById('left');
-        var iNow = 0;
         var speed = -3;
         //内容复制
         oNumBox.innerHTML = oNumBox.innerHTML + oNumBox.innerHTML;
         //宽度*2
         oNumBox.style.width = oNumBox.offsetWidth * 2 + 'px';
-        
-        
-        
+               
             timer = setInterval(function(){
                 oNumBox.style.left = oNumBox.offsetLeft + speed + 'px';
                 if(oNumBox.offsetLeft <= -oNumBox.offsetWidth / 2 ){
@@ -88,7 +85,6 @@
         }
         oLast.onclick = function(){
             speed = -3;
-            
         }
         
     </script>
