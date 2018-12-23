@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background:deepskyblue;
+        }
+        #div2{
+            width: 100px;
+            height: 100px;
+            background: plum;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2">
+
+        </div>
+    </div>
+    <script>
+        var dDiv1 = document.getElementById('div1');
+        var dDiv2 = document.getElementById('div2');
+    
+        // oDiv2.onclick = function(){
+        //     console.log('div2 click')
+        // }
+        // oDiv1.onclick = function(){
+        //     console.log('div1 click')
+        // }
+    /* 事件流 冒泡 捕获
+       冒泡 从里到外
+       捕获 从外到里
+       先捕获 再冒泡
+    */
+    oDiv1.addEventListener('click',function(){
+        console.log('冒泡1');
+    },false);
+    oDiv2.addEventListener('click',function(){
+        console.log('冒泡2');
+    },false);
+    oDiv1.addEventListener('click',function(){
+        console.log('捕获1');
+    },true);//支持冒泡
+    oDiv2.addEventListener('click',function(){
+        console.log('捕获2');
+    },true);
+    </script>
+</body>
+</html>

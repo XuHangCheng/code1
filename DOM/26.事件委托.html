@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">add</button>
+    <ul id="uli">
+        <li>zzz</li>
+        <li>xxx</li>
+    </ul>
+    <script>
+        var oBtn = document.getElementById('btn');
+        var oUL = document.getElementById('uli');
+        var aLi = document.querySelectorAll('li');
+
+
+        oBtn.onclick = function(){
+            var oLi = document.createElement('li')
+            oLi.innerHTML = Math.random();
+            oUL.appendChild(oLi);
+        
+        }
+
+
+        // for(var i = 0 ; i < aLi.length ; i++){
+        //     aLi[i].onclick = function(){
+        //         console.log(this.innerHTML);
+        //     }
+        // }
+    
+        oUl.onclick = function(e){
+            e = e||window.event;
+            var target = e.target
+            if(e.target.tagName == 'LI'){
+                console.log(target.innerHTML);
+            }
+        }
+    
+    </script>
+</body>
+</html>
