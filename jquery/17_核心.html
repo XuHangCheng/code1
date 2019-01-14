@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        <div class="aa">1234</div>
+        <div class="bb">5678</div>
+    </div>
+    <ul>
+        <li>11</li>
+        <li class="dd">22</li>
+        <li>33</li>
+    </ul>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // var $div1 = $('#div1');
+        // //$('#div1.aa');
+        // $('.aa',$div1).css('background','red')
+
+        console.log( $('.dd').index('li') );
+
+
+
+        console.log( $('li').length );
+        var obj1 = {
+            name:'zs',
+            age:10
+        }
+        var obj2 = {
+            name:'lisi',
+            school:'weichuang'
+        }
+        console.log($.extend({},obj1,obj2))
+    </script>
+</body>
+</html>
