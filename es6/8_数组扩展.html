@@ -17,9 +17,9 @@
     <script>
         var aLi = document.getElementsByTagName('li');
         // 类数组转化成数组
-        var a = Array.from(aLi);
-        a.push('ha');
-        console.log(a);
+        // var a = Array.from(aLi);
+        // a.push('ha');
+        // console.log(a);
 
         // console.log() Array.of()
         // var arr = new Array(3);
@@ -31,42 +31,79 @@
         // console.log( arr);
         // console.log( arr.copyWithin(0,2,6) );
         // 返回第一个符合条件的成员
-        // var result = arr.find(function(val,index){
-        //     // console.log(val,index);
-        //     return index>1;
-        // })
-        // console.log(result);
+        /*
+        var result = arr.find(function(val,index){
+            console.log(val,index);
+            return index>1;
+        })
+        console.log(result);
+        */
         // console.log(arr.fill('xx',1,4))
 
-        // for( var val of arr){
-        //     console.log(val);
-        // }
-        // for( var index of arr.keys()){
-        //     console.log(index);
-        // }
-        // for( var [index,val] of arr.entries()){
-        //     console.log(index,val);
-        // }
-
-        // arr.forEach(function(val,index){
-        //     console.log(val,index)
-        // })
-
-        // arr.map(function(val,index){
-        //     // return val+'xx';
-        //     if(index>3){
-        //         return val + 'xx'
-        //     }else{
-        //         return val + 'yy';
-        //     }
-        // })
-        
-        // console.log(result);
-
+        for( var val of arr){
+            console.log(val);
+        }
+        for( var index of arr.keys()){
+            console.log(index);
+        }
+        for( var [index,val] of arr.entries()){
+            console.log(index,val);
+        }
+        //没有返回值，只是针对每个元素调用函数
+        arr.forEach(function(val,index){
+            console.log(val,index)
+        })
+       //返回原数组处理过的新数组
+        var result = arr.map(function(val,index){
+            // return val+"xx";
+            if(index>3){
+                return val+"xx";
+            }else{
+                return val+"yy";
+            }
+        });
+        console.log(result);
+        var arr1 = [
+            {
+                name:'zs',
+                age:10
+            },{
+                name:'ls',
+                age:20
+            },{
+                name:'ww',
+                age:15
+            },{
+                name:'xx',
+                age:30
+            }
+        ]
         // var result1 = arr.filter(function(val,index){
         //     return index>1;
         // })
-        // console.log(result1)
+        // console.log(arr);
+        // console.log(result1);
+
+        //返回过滤出的符合条件的新数组
+        var result2 = arr1.filter(function(obj,index){
+            return obj.age>18;
+        });
+        console.log(result2);
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
 
         
 
