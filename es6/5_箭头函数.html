@@ -37,8 +37,13 @@
         // f1();
 
 
-        /* 箭头函数中this指的是声明时的this   父作用域中的this
-           普通函数中this指的是调用时的this
+        /* 
+        箭头函数this指向：
+            箭头函数中this指的是声明时的this   父作用域中的this
+            普通函数中this指的是调用时的this
+        箭头函数不能用于构造函数
+        箭头函数不能使用arguments
+
         */
         
         var oBtn = document.getElementById('btn');
@@ -67,17 +72,17 @@
         //     }
         // }
         
-        var obj = {
-            name:'zxs',
-            age:21,
-            say:function(){
-                setTimeout(() => {
-                    console.log(this);
-                })
-            }
-        }
+        // var obj = {
+        //     name:'zxs',
+        //     age:21,
+        //     say:function(){
+        //         setTimeout(() => {
+        //             console.log(this);
+        //         })
+        //     }
+        // }
         
-        obj.say();
+        // obj.say();
 
         /*
             this指向问题 
@@ -87,9 +92,22 @@
             在对象中this指向当前对象
         */
 
+        //function Person(){
 
+        //}
+        //var p1 = new person();
 
+        // let Person = () => {
+
+        // }
+
+        // new Person();//报错
+
+        var fn = (...rest) => {
+            // console.log(arguments);
+            console.log(rest);
+        }
+        fn(1,2,3);
     </script>
-    
 </body>
 </html>
