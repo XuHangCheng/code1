@@ -7,18 +7,22 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="app">
-        {{msg}}
-    </div>
+    <!-- <div id="app" v-html='msg'></div> -->
+    <div id="app" v-text='msg'></div>
     <script src="vue.js"></script>
     <script>
         var vm = new Vue({
             el:'#app',
-                data:{
-                    msg:'hello world'
-                }
-            })
-    console.log(vm.msg);
+            data:{
+                msg:'<h2>hello</h2>'
+            }
+
+        })
+    
+    
+    
+    
+    
     </script>
 </body>
 </html>

@@ -8,17 +8,22 @@
 </head>
 <body>
     <div id="app">
-        {{msg}}
+        <input type="text" @keyup='fn()'>
     </div>
     <script src="vue.js"></script>
     <script>
         var vm = new Vue({
             el:'#app',
-                data:{
-                    msg:'hello world'
+            data:{
+
+            },
+            method:{
+                fn(){
+                    console.log('haha');
                 }
-            })
-    console.log(vm.msg);
+            }
+        })
+    
     </script>
 </body>
 </html>

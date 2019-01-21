@@ -8,17 +8,29 @@
 </head>
 <body>
     <div id="app">
-        {{msg}}
-    </div>
+        <div v-if='a'>哈哈</div>
+        <div v-else>呵呵</div>
+
+        <h2 v-if='b == "x"'>xxxx</h2>
+        <h2 v-else-if='b == "y"'>yyyy</h2>
+        <h2 v-else>zzzz</h2>
+
+        <div v-show='a'>哈哈</div>
+    </div> 
     <script src="vue.js"></script>
     <script>
         var vm = new Vue({
             el:'#app',
-                data:{
-                    msg:'hello world'
-                }
-            })
-    console.log(vm.msg);
+            data:{
+                a:true,
+                b:'x'
+            }
+        })
+
+
+
+
     </script>
+
 </body>
 </html>
