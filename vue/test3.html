@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            width: 400px;
+            margin:50px auto;
+        }
+        ul{
+            list-style: none;
+        }
+        li{
+            height: 50px;
+            line-height: 50px;
+            background: #ccc;
+            padding: 0 10px;
+            margin-bottom:10px;
+        }
+        .price,.x{
+            float: right;
+        }
+        .x{
+            color: red;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .selected{
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>todolist</h2>
+        <hr>
+        <label for="listname">名称</label>
+        <input type="text" id="listname" placeholder="请输入产品名" v-model= 'name'>
+        <label for="listprice">价格</label>
+        <input type="text" id="listprive" placeholder="请输入产品价格" v-model = 'price'>
+        <button :class="add" @click='add()'>添加</button>
+        <br>
+        <input type="text" id="listsearch" placeholder="请输入搜索内容" v-model = 'searchVal' @keyup='filter'>
+        <label for="listsearch"><button>搜索</button></label>
+        <ul>
+            <li v-for='(product,index) in showlist'@click= "change(product,index)" :class="{selected:product.isSelect}">
+                <!-- v-model = 'check' -->
+                <input type="checkbox" v-model ='product.isSelect' :value='index'>
+                <span>{{product.name}}</span>
+                <span class="x" @click.stop='linedel(index)'>[X]</span>
+                <span class="price">{{product.price}}</span>
+            </li>          
+        </ul>
+        <button @click = 'del()'>删除选中</button>
+        总价
+        <span class="total_price">{{total()}}</span>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#container',
+            data:{
+                list:[
+                    {
+                        name:'裤子',
+                        price:11,
+                        isSelect:false
+                },{
+                        name:'衣服',
+                        price:22,
+                        isSelect:false
+                },{
+                        name:'电脑',
+                        price:11111,
+                        isSelect:false
+                },{
+                        name:'iPhoneX',
+                        price:8888,
+                        isSelect:false,
+                },
+                ],
+                showlist:[
+                    {
+                        name:'裤子',
+                        price:11,
+                        isSelect:false
+                },{
+                        name:'衣服',
+                        price:22,
+                        isSelect:false
+                },{
+                        name:'电脑',
+                        price:11111,
+                        isSelect:false
+                },{
+                        name:'iPhoneX',
+                        price:8888,
+                        isSelect:false,
+                },
+                ],
+                name:'',
+                price:'',
+                // check:[],
+                searchVal:'',
+            },
+            methods:{
+                change(product,idx){
+                    // if(product.isSelect){
+                    //     this.check.splice(this.check.indexOf(idx),1);
+                    // }else{
+                    //     this.check.push(idx);
+                    // }
+                    product.isSelect=!product.isSelect;
+                    this.list = [...this.showlist];
+                },
+                total(){
+                    let sum = 0;
+                    this.list.forEach(function(product,index){
+                        if(product.isSelect){
+                            sum += product.price;
+                        }
+                    })
+                    return sum;
+                },
+                add(){
+                    this.list.push({
+                        name:this.name,
+                        price: Math.trunc(this.price),
+                        isSelect:false,
+                    })
+                    this.name='';
+                    this.price='';
+                    this.showlist=[...this.list];
+                },
+                del(){
+                        var newProduct = this.showlist.filter(function(product){
+                        return (product.isSelect != true);
+                    });
+                        this.showlist = [...newProduct];
+                        this.list = [...this.showlist];
+                },
+                linedel(index){
+                    this.list.splice(index,1);
+                    this.showlist=[...this.list];
+                },
+                filter(){
+                    var newproduct = this.list.filter((product)=>{
+                        return product.name.includes(this.searchVal);
+                    })
+                    this.showlist = newproduct;
+                }
+            }
+
+
+
+
+        })
+
+
+
+
+    </script>
+</body>  
