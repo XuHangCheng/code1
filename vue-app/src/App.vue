@@ -2,12 +2,9 @@
   <div id="app">
       <c-header></c-header>
       <div id="content">
-        <h1>电影</h1>
-        <h1>电影</h1>
-        <h1>电影</h1>
-        <h1>电影</h1>
+        <router-view></router-view>
       </div>
-      <c-footer></c-footer>
+      <c-footer :menu="menu"></c-footer>
   </div>
 </template>
 
@@ -15,6 +12,28 @@
       import CHeader from '@/components/CHeader.vue';
       import CFooter from '@/components/CFooter.vue';
       export default {
+        data(){
+          return{
+            menu:[
+              {
+                path:'/movie',
+                name:'电影'
+              },
+              {
+                path:'/music',
+                name:'音乐'
+              },
+              {
+                path:'/book',
+                name:'图书'
+              },
+              {
+                path:'/photo',
+                name:'图片'
+              }
+            ]
+          }
+        },
         components:{
           CHeader,
           CFooter
@@ -24,7 +43,7 @@
 
 
 <style>
-  #countent{
-    margin: 0;
+  #content{
+    margin: 1rem 0;
   }
 </style>

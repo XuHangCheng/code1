@@ -1,17 +1,16 @@
 <template>
     <div class="footer">
         <ul>
-            <li>电影</li>
-            <li>音乐</li>
-            <li>图书</li>
-            <li>图片</li>
+            <li v-for='(obj,index) in menu' :key='index'>
+               <router-link :to='obj.path'>{{obj.name}}</router-link> 
+            </li>
         </ul>
     </div>
 </template>
 
 <script>
     export default {
-        
+        props:['menu']
     }
 </script>
 
@@ -23,7 +22,6 @@
         height: 1rem;
         width: 100%;
         background: #ff0036;
-
     }
     .footer ul{
         display: flex;
@@ -33,5 +31,12 @@
         color:#fff;
         line-height: 1rem;
         text-align: center;
+    }
+    .footer a{
+        color: #000;
+        outline:none;
+    }
+    .footer a.router-link-active{
+        color: #fff;
     }
 </style>
