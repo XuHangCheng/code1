@@ -3,6 +3,8 @@ import Router from 'vue-router';
 import Home from './views/Home.vue';
 import Mine from './views/mine.vue';
 import Test from './views/test.vue';
+import A from './views/A.vue';
+import B from './views/B.vue';
 Vue.use(Router);
 
 export default new Router({
@@ -30,7 +32,18 @@ export default new Router({
     {
       path:'/test',
       name:'test',
-      component:Test
+      component:Test,
+      children:[
+        {
+          path:'/a',
+          component:A
+        },
+        {
+          path:'/b',
+          component:B
+        }
+      ]
     },
+
   ],
 });
