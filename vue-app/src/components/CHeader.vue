@@ -1,16 +1,17 @@
 <template>
     <div>
-        <header>
-            <span class="gohome">首页</span>
-            电影
+        <header :style='{background:color}'>
+            <span class="goHome">首页</span>
+            {{name}}
         </header>
 
     </div>
 </template>
 
 <script>
+    import {mapState} from "vuex";
     export default {
-        
+        computed: mapState(["color","name"])
     }
 </script>
 
@@ -26,7 +27,7 @@
         line-height: 1rem;
         color: #ffffff;
     }
-    .gohome{
+    .goHome{
         position: absolute;
         left: 0.1rem;
         top: 50%;

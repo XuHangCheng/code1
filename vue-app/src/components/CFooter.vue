@@ -1,16 +1,19 @@
 <template>
-    <div class="footer">
+    <div class="footer" :style="{background:color}">
         <ul>
-            <li v-for='(obj,index) in menu' :key='index'>
-               <router-link :to='obj.path'>{{obj.name}}</router-link> 
+            <li v-for='(obj,index) in menu' :key='index' >
+               <router-link :to='obj.path' @click.native="change(obj)">{{obj.name}}</router-link> 
             </li>
         </ul>
     </div>
 </template>
 
 <script>
+    import {mapState,mapMutations} from "vuex"; 
     export default {
-        props:['menu']
+        props:["menu"],
+        computed: mapState(["color","name"]),
+        methods: mapMutations(["change"])
     }
 </script>
 
