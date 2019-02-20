@@ -1,6 +1,6 @@
 <template>
   <div class='photo'>
-      <img v-for="(photoSrc,index) in photo" :key="index" :src="photoSrc.src" @click="goDetail" alt="">
+      <img v-for="(photoSrc,index) in $store.state.photos" :key="index" :src="photoSrc.src" @click="goDetail(index)" alt="">
   </div>
 </template>
 
@@ -9,7 +9,7 @@ import axios from 'axios'
   export default {
     data(){
       return{
-        photo:[]
+        // photo:[]
       }
     },
     created(){
@@ -29,5 +29,7 @@ import axios from 'axios'
 </script>
 
 <style scoped>
-
+.photo img{
+        width:50%;
+    }
 </style>

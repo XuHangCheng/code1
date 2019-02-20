@@ -17,7 +17,8 @@ export default new Vuex.Store({
       state.name = obj.name;
     },
     addPhoto(state,photo){
-      console.log(photo)
+      // console.log(photo)
+      state.photos=[...photo];
     }
   },
   actions: {
